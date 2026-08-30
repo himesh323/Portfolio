@@ -17,20 +17,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
-      - name: Install Dependencies
-        run: |
-          npm install
-          cd client && npm install
-          cd ../server && npm install
-
-      - name: Build Frontend
+      - name: Install & Build Frontend
         run: |
           cd client
-          npm run build
-
-      - name: Build Backend
-        run: |
-          cd server
+          npm install
           npm run build

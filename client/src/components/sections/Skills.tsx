@@ -29,7 +29,7 @@ export function Skills() {
           {skillCategories.map((cat, cIndex) => (
             <div key={cIndex} className="skill-cat">
               <b className="cat-title">{cat.category}</b>
-              {cat.skills.map((s, sIndex) => (
+              {cat.skills.map((s: { name: string; percentage: number }, sIndex: number) => (
                 <div key={sIndex} className="skill-row">
                   <div className="sr-top">
                     <span>{s.name}</span>

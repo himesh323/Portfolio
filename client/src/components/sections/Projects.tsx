@@ -19,7 +19,7 @@ export function Projects() {
                     {p.description}
                   </p>
                   <div className="project-meta">
-                    {p.tags.map((t, tIndex) => (
+                    {p.tags.map((t: string, tIndex: number) => (
                       <span key={tIndex} className={`tag ${p.tagColor === 'purple' ? 'p' : p.tagColor === 'teal' ? 't' : ''}`}>
                         {t}
                       </span>

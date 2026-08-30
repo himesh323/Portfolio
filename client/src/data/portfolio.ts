@@ -7,7 +7,7 @@ import type {
   Achievement,
   HeroData,
   AboutData,
-} from '../../../shared/types';
+} from '@/shared/types';
 
 /* ============================================================
    ALL PORTFOLIO CONTENT — Preserved from original HTML

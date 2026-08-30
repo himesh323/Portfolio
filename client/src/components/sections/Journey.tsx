@@ -16,7 +16,7 @@ export function Journey() {
             <div key={gIndex} className="road-group">
               <b>▸ {group.title}</b>
               <div className="road-nodes">
-                {group.nodes.map((n, nIndex) => (
+                {group.nodes.map((n: string, nIndex: number) => (
                   <div key={nIndex} className="road-node">
                     {n}
                   </div>

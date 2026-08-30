@@ -30,7 +30,7 @@ export function About() {
             </div>
 
             <ul className="journey-mini">
-              {aboutData.timeline.map((item, index) => (
+              {aboutData.timeline.map((item: { year: string; description: string }, index: number) => (
                 <li key={index}>
                   <b>{item.year}</b>
                   <span>{item.description}</span>
@@ -41,7 +41,7 @@ export function About() {
 
           <div>
             <div className="stat-grid">
-              {aboutData.stats.map((stat, index) => (
+              {aboutData.stats.map((stat: { value: number; label: string }, index: number) => (
                 <div key={index} className="stat-box">
                   <div className="num">
                     <AnimatedCounter target={stat.value} />

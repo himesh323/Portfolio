@@ -18,4 +18,4 @@ export type {
   SocialLinks, 
   HeroData, 
   AboutData 
-} from '../../../shared/types';
+} from '@/shared/types';

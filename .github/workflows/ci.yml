@@ -9,6 +9,9 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
 
     steps:
       - uses: actions/checkout@v4
@@ -18,8 +21,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install & Build Frontend
-        run: |
-          cd client
-          npm install
-          npm run build
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build

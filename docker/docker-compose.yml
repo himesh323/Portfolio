@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: portfolio_mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - portfolio_net
+
+  server:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.server
+    container_name: portfolio_server
+    ports:
+      - '5000:5000'
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongodb:27017/portfolio
+      - JWT_SECRET=production_secret_change_me
+      - JWT_REFRESH_SECRET=production_refresh_secret_change_me
+    depends_on:
+      - mongodb
+    networks:
+      - portfolio_net
+
+  client:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.client
+    container_name: portfolio_client
+    ports:
+      - '80:80'
+    depends_on:
+      - server
+    networks:
+      - portfolio_net
+
+volumes:
+  mongo_data:
+
+networks:
+  portfolio_net:
+    driver: bridge

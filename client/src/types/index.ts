@@ -1,0 +1,21 @@
+export type { 
+  Project, 
+  SkillCategory, 
+  Skill, 
+  Certificate, 
+  Experience, 
+  Education, 
+  Interest, 
+  RoadmapTrack, 
+  Achievement, 
+  BlogPost, 
+  ContactMessage, 
+  VisitorRecord, 
+  AnalyticsData, 
+  UserProfile, 
+  AuthResponse, 
+  ApiResponse, 
+  SocialLinks, 
+  HeroData, 
+  AboutData 
+} from '../../../shared/types';
